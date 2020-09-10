@@ -22,7 +22,4 @@ use Illuminate\Http\Request;
 Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'HomeController@index')->middleware(['auth','verified'])->name('home');
-Route::get('session', function (Request $request) {
-    $request->session()->flash('message','hello');
-    return $request->session()->get('message');
-});
+
